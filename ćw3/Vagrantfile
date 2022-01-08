@@ -1,21 +1,33 @@
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
-
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/focal64"
   config.vm.define "ubuntu1" do |ubuntu1|
     ubuntu1.vm.box = "ubuntu/focal64"
     ubuntu1.vm.hostname = "ubuntu1"
     ubuntu1.vm.network "private_network", ip: "192.168.56.2"
+    ubuntu1.vm.provider "virtualbox" do |vb1|
+      vb1.name = "ubuntu1"
+      vb1.memory = "1024"
+      vb1.cpus = "1"
+    end
   end
   config.vm.define "ubuntu2" do |ubuntu2|
     ubuntu2.vm.box = "ubuntu/focal64"
     ubuntu2.vm.hostname = "ubuntu2"
     ubuntu2.vm.network "private_network", ip: "192.168.56.3"
+    ubuntu2.vm.provider "virtualbox" do |vb2|
+      vb2.name = "ubuntu2"
+      vb2.memory = "1024"
+      vb2.cpus = "1"
+    end
   end
   config.vm.define "ubuntu3" do |ubuntu3|
     ubuntu3.vm.box = "ubuntu/focal64"
     ubuntu3.vm.hostname = "ubuntu3"
     ubuntu3.vm.network "private_network", ip: "192.168.56.4"
+    ubuntu3.vm.provider "virtualbox" do |vb3|
+      vb3.name = "ubuntu3"
+      vb3.memory = "1024"
+      vb3.cpus = "1"
+    end
   end
 end

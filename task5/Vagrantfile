@@ -44,7 +44,7 @@ Vagrant.configure("2") do |config|
   #
   #   # Customize the amount of memory on the VM:
      vb.memory = "1024"
-     vb.name = "task-1"
+     vb.name = "task-5"
    end
   #
   # View the documentation for the provider you are using for more
@@ -56,7 +56,7 @@ Vagrant.configure("2") do |config|
    config.vm.provision "shell", inline: <<-SHELL
      export DEBIAN_FRONTEND=noninteractive
      apt-get update
-     apt-get install -y apache2 mc htop iptraf-ng iotop
+     apt-get install -y apache2
    SHELL
 
    #Install docker

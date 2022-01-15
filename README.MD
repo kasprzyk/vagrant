@@ -22,6 +22,7 @@ docker build . -t python-app:0.0.1
 docker run -d python-app:0.0.1
 
 docker run -d -p 80:5000 python-app:0.0.3
+przekierowanie z 5000 na 80 a następnie z 80 na 20080
 w przegladarce http://127.0.0.1:20080/
 
 docker run -d -p 80:5000 --env INFOSHARE=TEST python-app:0.0.4

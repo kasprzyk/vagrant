@@ -1,3 +1,4 @@
 .vagrant
 **/wordpress
 .Dockerfile.swp
+__pycache__

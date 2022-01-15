@@ -29,3 +29,8 @@ docker run -d -p 80:5000 --env INFOSHARE=TEST python-app:0.0.4
 przekazanie env
 
 docker push kasprzyk1/python-app:0.0.4
+
+
+aplikacja java:
+docker build . -t java-app:0.0.1
+docker run -d -p 82:8080 java-app:0.0.1

@@ -3,7 +3,17 @@ FROM debian:10-slim
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteeractive apt-get install -y \
     apache2 \
+    curl \
+    composer \
+    gettext-base \
+    locales \
     php7.3 \
+    php7.3-bcmath \
+    php7.3-gd \
+    php7.3-gmp \
+    php7.3-soap \
+    php7.3-xml \
+    php7.3-zip \
     php-mysql \
     wget
 
@@ -21,4 +31,5 @@ RUN APP_VERSION=`curl --silent "https://api.github.com/repositories/3524851/rele
 RUN composer install
 
 USER root
+COPY docker-entrypoint.sh /vagrant/docker-entrypoint
 

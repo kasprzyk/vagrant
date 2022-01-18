@@ -34,3 +34,5 @@ docker push kasprzyk1/python-app:0.0.4
 aplikacja java:
 docker build . -t java-app:0.0.1
 docker run -d -p 82:8080 java-app:0.0.1
+
+WORKDIR - zmenia kontekst na dany katalog (jak nie ma katalogu to go utworzy)

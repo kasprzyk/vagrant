@@ -62,6 +62,8 @@ https://127.0.0.1:19443/ adres portainera, pamiętać żeby nei dawac bezpośred
 
 ps aux
 
+docker node ps - wyświetla listę,errory,statusy
+
 docker stack deploy -c docker-compose.yml app (będąc wewnarz app1)
 
 zmienić w opcjach vm mapowanie z 10080 na 20080, wejść http://127.0.0.1:20080/ wyświetli popraniwe

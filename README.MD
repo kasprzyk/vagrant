@@ -45,3 +45,11 @@ apt search php7
 apt install locales
 cat /etc/group - użytkownicy i uidy
 cat /etc/passwd - uidy, foldery domowe usera, jaką powłoke dany user ma domyślną
+
+task8
+netstat -a   - otwarte porty
+iptraf-ng
+
+AUTO_START_SWARM=true vagrant up (wrzucamy bezpośrednio do terminala, możemy dać tylko vagrant up ale nie utworzy się klaster)
+
+docker node ls - Lists all the nodes that the Docker Swarm manager knows about. 

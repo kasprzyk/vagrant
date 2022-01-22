@@ -2,3 +2,4 @@
 **/wordpress
 .Dockerfile.swp
 __pycache__
+token

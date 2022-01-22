@@ -66,4 +66,8 @@ docker node ps - wyświetla listę,errory,statusy
 
 docker stack deploy -c docker-compose.yml app (będąc wewnarz app1)
 
-zmienić w opcjach vm mapowanie z 10080 na 20080, wejść http://127.0.0.1:20080/ wyświetli popraniwe
+zmienić w opcjach vm mapowanie z 10080 na 20080 (nie dodawać kolejnego tylko edytować istniejący), wejść http://127.0.0.1:20080/ wyświetli popraniwe
+
+docker stack rm app -> ubicie 
+
+docker service scale app_app=3 -> skalowanie aplikacji

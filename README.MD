@@ -36,3 +36,12 @@ docker build . -t java-app:0.0.1
 docker run -d -p 82:8080 java-app:0.0.1
 
 WORKDIR - zmenia kontekst na dany katalog (jak nie ma katalogu to go utworzy)
+
+
+docker run -it debian:10-slim /bin/bash    (wywołanie interaktywnego terminalu, sprawdzamy co po kolei instalować)
+apt update
+apt install apache2
+apt search php7
+apt install locales
+cat /etc/group - użytkownicy i uidy
+cat /etc/passwd - uidy, foldery domowe usera, jaką powłoke dany user ma domyślną

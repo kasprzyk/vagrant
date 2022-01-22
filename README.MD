@@ -53,3 +53,15 @@ iptraf-ng
 AUTO_START_SWARM=true vagrant up (wrzucamy bezpośrednio do terminala, możemy dać tylko vagrant up ale nie utworzy się klaster)
 
 docker node ls - Lists all the nodes that the Docker Swarm manager knows about. 
+
+portainer docker swarm https://docs.portainer.io/v/ce-2.11/start/install/server/swarm/linux
+wejście na managera (vagrant ssh manager) przejście do folderu cd /vagrant i uruchomienie 
+docker stack deploy -c portainer-agent-stack.yml portainer
+
+https://127.0.0.1:19443/ adres portainera, pamiętać żeby nei dawac bezpośrednio 127.0.0.1:19443 tylko przez https!
+
+ps aux
+
+docker stack deploy -c docker-compose.yml app (będąc wewnarz app1)
+
+zmienić w opcjach vm mapowanie z 10080 na 20080, wejść http://127.0.0.1:20080/ wyświetli popraniwe

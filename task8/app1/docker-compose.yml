@@ -1,0 +1,12 @@
+version: "3.6"
+
+services:
+    app:
+        image: rstarmer/hostname:latest
+        ports: 
+        - 8080:80
+        deploy:
+            mode: replicated
+            replicas: 3
+            placement:
+                constraints: [node.role==manager]

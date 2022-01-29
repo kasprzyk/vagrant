@@ -1,0 +1,7 @@
+---
+- name: create directory
+  file:
+    path: "~/dane"
+    state: directory
+
+- file: path="~/dane/tajne" state=touch

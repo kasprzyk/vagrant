@@ -1,0 +1,6 @@
+---
+
+- hosts: target1
+
+  roles:
+  - cwiczenie

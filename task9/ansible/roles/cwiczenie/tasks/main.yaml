@@ -5,8 +5,21 @@
     state: directory
     mode: "0700"
 
-- file: path="~/dane/tajne" state=touch
+- name: creating files
+  file:
+    path: "~/dane/{{ item }}"
+    state: touch
+  with_items:
+    - tajne
+    - poufne
+    - publiczne
 
-- name: debugowanie
-  debug:
-    msg: "test"
+- name: run ls
+  shell: ls -l
+  args:
+    chdir: "~/dane"
+  register: result
+
+- debug:
+    var: result
+  #with items: result.stdout_lines

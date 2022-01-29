@@ -1,0 +1,6 @@
+---
+- include_tasks: packages-yum.yaml
+  when: ansible_os_family == "RedHat"
+
+- include_tasks: packages-apt.yaml
+  when: ansible_os_family == "Debian"

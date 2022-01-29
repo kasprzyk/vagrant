@@ -1,0 +1,12 @@
+---
+- hosts: target2
+  become: true
+  tasks:
+    - name: Add several users
+      user:
+        name: "{{ item }}"
+        state: present
+        create_home: true
+      with_items:
+        - alice
+        - bob

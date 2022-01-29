@@ -1,0 +1,13 @@
+# This file is managed by Ansible
+MySQL package: {{ mysql_package_name }}
+Server:        {{ inventory_hostname }}
+
+Packages that will be installed:
+{% for package in common_packages %}
+  Trying to install: {{ package }}
+{% endfor %}
+
+Try example with if:
+{% if mysql_package_name == "mysql-server" %}
+  Installing {{ mysql_package_name }}
+{% endif %}

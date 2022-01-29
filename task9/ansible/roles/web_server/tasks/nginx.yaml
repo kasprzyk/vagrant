@@ -1,0 +1,40 @@
+---
+- name: Install nginx package
+  apt:
+    name: nginx
+    state: latest
+  tags:
+    - bootstrap
+
+- name: start nginx
+  service:
+    name: nginx
+    state: started
+  tags:
+    - bootstrap
+
+- name: copy nginx config file
+  copy:
+    src: files/nginx.conf
+    dest: /etc/nginx/sites-available/default
+  notify: restart nginx
+  tags: configure
+
+- name: enable configuration
+  file:
+    dest: /etc/nginx/sites-enabled/default
+    src: /etc/nginx/sites-available/default
+    state: link
+  notify: restart nginx
+  tags: configure
+
+- name: copy index.html
+  template:
+    src: templates/index.html.j2
+    dest: /usr/share/nginx/html/index.html
+    mode: 0644
+  notify: restart nginx
+  tags:
+    - configure
+    - webpage
+

@@ -1,0 +1,45 @@
+---
+
+- name: Prepare common directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: 0755
+  with_items:
+    - "/home/{{ ansible_user }}/app"
+    - "/home/{{ ansible_user }}/app/log"
+    - "/home/{{ ansible_user }}/conf"
+
+- name: Create /var/log/app directory
+  file:
+    path: "/var/log/app"
+    state: directory
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: 0755
+  register: app_dir
+
+- name: Print app_dir
+  debug:
+    var: app_dir
+
+- name: Check whether /var/log/app exists
+  stat:
+    path: /var/log/app
+  register: app_dir_check
+
+- name: Create /var/log/app/app.conf
+  template:
+    src: hello-world.j2
+    dest: /var/log/app/app.conf
+    owner: root
+    group: root
+    mode: 0644
+  when:
+    - app_dir_check.stat.exists == true
+    - app_dir_check.stat.isdir == true
+  notify: Restart nginx
+  tags:
+    - update-template

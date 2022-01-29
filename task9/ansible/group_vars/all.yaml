@@ -1,0 +1,10 @@
+---
+mysql_package_name: mysql-server
+common_packages:
+  - git
+  - htop
+  - mc
+  - python3
+  - python3-pip
+  - vim
+

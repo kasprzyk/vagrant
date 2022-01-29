@@ -1,0 +1,19 @@
+---
+- name: Install pip packages
+  pip:
+    name: PyMySQL
+    state: present
+
+- name: Create test database
+  community.mysql.mysql_db:
+    name: test-database
+    state: present
+    login_unix_socket: /var/run/mysqld/mysqld.sock
+
+- name: Create test user
+  community.mysql.mysql_user:
+    name: test
+    password: "{{ mysql_passwd }}"
+    priv: '*.*:ALL,GRANT'
+    state: present
+    login_unix_socket: /var/run/mysqld/mysqld.sock

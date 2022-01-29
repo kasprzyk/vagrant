@@ -1,0 +1,9 @@
+---
+- hosts: web_servers
+  become: true
+
+  roles:
+    - role: common
+      tags:
+        - bootstrap
+    - web_server

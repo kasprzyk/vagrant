@@ -71,3 +71,11 @@ zmienić w opcjach vm mapowanie z 10080 na 20080 (nie dodawać kolejnego tylko 
 docker stack rm app -> ubicie 
 
 docker service scale app_app=3 -> skalowanie aplikacji
+
+
+task9 ansible -m ping -i hosts all
+-m - użyj modułu
+
+ansible -m ping -i hosts web_servers - ping do grupy
+
+ansible-playbook -i hosts.yaml 01-playbook.yaml

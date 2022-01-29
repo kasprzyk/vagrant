@@ -79,3 +79,6 @@ task9 ansible -m ping -i hosts all
 ansible -m ping -i hosts web_servers - ping do grupy
 
 ansible-playbook -i hosts.yaml 01-playbook.yaml
+
+ ansible-playbook -i hosts.yaml 03-cwiczenie.yaml
+

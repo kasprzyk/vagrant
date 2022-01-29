@@ -3,5 +3,10 @@
   file:
     path: "~/dane"
     state: directory
+    mode: "0700"
 
 - file: path="~/dane/tajne" state=touch
+
+- name: debugowanie
+  debug:
+    msg: "test"

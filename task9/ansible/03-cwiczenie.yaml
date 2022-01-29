@@ -1,6 +1,8 @@
 ---
 
 - hosts: target1
+  vars:
+    zmienna_1: wartosc_1
 
   roles:
   - cwiczenie

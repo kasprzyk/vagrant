@@ -6,6 +6,10 @@
   <h1>nginx, configured by Ansible</h1>
   <p>If you can see this, Ansible successfully installed nginx.</p>
 
-  <p>Running on {{ inventory_hostname }}</p>
+  <p>Running on {{ inventory_hostname }}, address {{ ansible_host }}</p>
+  <p>All IP addresses:</p>
+  {% for ip in ansible_all_ipv4_addresses %}
+  <p>{{ ip }}</p>
+  {% endfor %}
   </body>
 </html>

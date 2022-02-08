@@ -1,0 +1,16 @@
+
+---
+- hosts: web_servers
+  become: yes
+  become_user: root
+
+  roles:
+    - role: common
+    - role: geerlingguy.git
+    - role: geerlingguy.docker
+    - role: geerlingguy.pip
+      vars:
+        pip_install_packages:
+          - name:
+              - docker
+              - docker-compose

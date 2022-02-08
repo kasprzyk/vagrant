@@ -1,0 +1,13 @@
+---
+all:
+  vars:
+    ansible_user: vagrant
+
+web_servers:
+  hosts:
+    host1:
+      ansible_host: 192.168.56.11
+      ansible_ssh_private_key_file: /vagrant/.vagrant/machines/host1/virtualbox/private_key
+    host2:
+      ansible_host: 192.168.56.12
+      ansible_ssh_private_key_file: /vagrant/.vagrant/machines/host2/virtualbox/private_key

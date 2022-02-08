@@ -85,3 +85,12 @@ ansible-playbook -i hosts.yaml 03-cwiczenie.yaml
 
 ansible-playbook -i hosts.yaml 04-loop-example.yaml 
 
+inventory_hostname - zmienna z ansible
+
+
+23-task
+vagrant up
+ansible-galaxy install -r requirements.txt
+ansible-galaxy install --roles-path ./roles/ -r requirements.yaml -> instaluje role z pliku
+ansible-playbook -i hosts.yaml 1-task.yaml
+

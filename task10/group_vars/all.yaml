@@ -1,0 +1,7 @@
+---
+mysql_package_name: mysql-server
+common_packages:
+  - python3
+  - python3-pip
+  - vim
+

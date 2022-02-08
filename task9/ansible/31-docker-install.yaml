@@ -1,0 +1,10 @@
+---
+- hosts: target2
+  become: yes
+
+  roles:
+    # rola zainstalowana przez:
+    # ansible-galaxy install geerlingguy.docker
+    # można też zainstalować w katalogu roles:
+    # ansible-galaxy install geerlingguy.docker -p ./roles/
+    - geerlingguy.docker

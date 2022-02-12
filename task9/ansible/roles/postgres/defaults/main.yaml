@@ -1,0 +1,3 @@
+---
+app_directory_name: "postgres"
+app_directory: "/opt/{{ app_directory_name }}"

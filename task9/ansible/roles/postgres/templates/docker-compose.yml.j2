@@ -1,0 +1,11 @@
+version: "3.4"
+services:
+  postgres:
+    container_name: postgres
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: mealie
+      POSTGRES_USER: mealie
+    ports:
+      - 5432:5432

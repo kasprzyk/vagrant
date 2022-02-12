@@ -1,0 +1,12 @@
+---
+- hosts: app_servers
+  become: yes
+
+  roles:
+    - mealie
+
+- hosts: databases
+  become: yes
+
+  roles:
+    - postgres

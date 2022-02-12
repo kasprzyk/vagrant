@@ -1,0 +1,23 @@
+---
+- name: Create app directory
+  file:
+    path: "{{ app_directory }}"
+    state: directory
+
+- name: Create docker-compose file
+  template:
+    dest: "{{ app_directory }}/docker-compose.yml"
+    src: "templates/docker-compose.yml.j2"
+
+- name: Tear down existing services
+  community.docker.docker_compose:
+    project_src: "{{ app_directory }}"
+    state: absent
+
+- name: Create and start services
+  community.docker.docker_compose:
+    project_src: "{{ app_directory }}"
+  register: output
+
+- ansible.builtin.debug:
+    var: output

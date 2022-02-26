@@ -94,3 +94,12 @@ ansible-galaxy install -r requirements.txt
 ansible-galaxy install --roles-path ./roles/ -r requirements.yaml -> instaluje role z pliku
 ansible-playbook -i hosts.yaml 1-task.yaml
 
+
+task11
+vagrant ssh
+aws sts get-caller-identity
+terraform init
+terraform apply
+aws ec2 help
+aws ec2 describe-images
+

@@ -103,3 +103,19 @@ terraform apply
 aws ec2 help
 aws ec2 describe-images
 
+
+task12
+kubectl get po -o wide
+kubectl get hpa
+kubectl scale deploy myapp-deployment --replicas=1
+kubectl get deploy
+kubectl get po --all-namespaces
+kubectl get rs - current replicasets
+kubectl delete rs  <name>
+
+
+https://labs.play-with-k8s.com/
+
+kubectl apply -f new.yaml
+kubectl get deploy
+kubectl get pods

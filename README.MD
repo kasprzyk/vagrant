@@ -119,3 +119,7 @@ https://labs.play-with-k8s.com/
 kubectl apply -f new.yaml
 kubectl get deploy
 kubectl get pods
+
+
+task15
+jenkins.io/doc/book/installing/linux/#debianubuntu

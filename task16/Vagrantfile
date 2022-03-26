@@ -6,10 +6,10 @@ Vagrant.configure("2") do |config|
       node.vm.hostname = "node"
       node.vm.box = "msl0/node"
       node.vm.box_version = "1"
-      node.vm.network "private_network", ip: "10.0.0.20"
+      node.vm.network "private_network", ip: "192.168.56.6"
   
       node.vm.provider "virtualbox" do |vb|
-        vb.name = "node"
+        vb.name = "node1"
         vb.cpus = "1"
         vb.memory = "1024"
       end
@@ -19,10 +19,10 @@ Vagrant.configure("2") do |config|
       jenkins.vm.hostname = "jenkins"
       jenkins.vm.box = "msl0/jenkins"
       jenkins.vm.box_version = "1"
-      jenkins.vm.network "private_network", ip: "10.0.0.10"
+      jenkins.vm.network "private_network", ip: "192.168.56.7"
       jenkins.vm.network "forwarded_port", guest: 8080, host: 8082
       jenkins.vm.provider "virtualbox" do |vb|
-        vb.name = "jenkins"
+        vb.name = "jenkins1"
         vb.cpus = "1"
         vb.memory = "2048"
       end

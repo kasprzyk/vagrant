@@ -42,7 +42,7 @@ pipeline {
         }
     post {
         failure {
-            mail body: 'message', subject: 'Test', to: 'maciej.dyderski@gmail.com'
+            emailext body: 'message', subject: 'Test', to: 'piotkas1@gmail.com'
         }
     }    
     }

@@ -1,0 +1,49 @@
+pipeline {
+    environment {
+        NPM_CONFIG_CACHE = "${WORKSPACE}/.npm"
+    }
+    agent none
+    stages {
+        stage('Build') {
+            agent {
+                docker {
+                    image 'node:12-alpine'
+                    label 'node01'
+                }
+            }
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Test') {
+            agent {
+                docker {
+                    image 'node:12-alpine'
+                    label 'node01'
+                }
+            }
+            steps {
+                sh 'node app.js &' 
+                sh 'npm test'
+            }
+            post {
+                always {
+                    junit "*.xml"
+                }
+            }
+        }
+        stage('Build image') {
+            agent {
+                label 'node01'
+            }           
+            steps {
+                sh "docker build -t projekt-grupa1:${BUILD_NUMBER} ."
+            }
+        }
+    post {
+        failure {
+            mail body: 'message', subject: 'Test', to: 'maciej.dyderski@gmail.com'
+        }
+    }    
+    }
+}

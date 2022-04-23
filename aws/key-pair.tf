@@ -1,0 +1,4 @@
+resource "aws_key_pair" "key" {
+  key_name   = "daniel@cloudpanda.io"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDFnNwyRNl2zzXPjslGXKTVML9utOGXeXro/UV23e28pI91kt5hC67AmI9l5mJjm011L6yw/JIUGKXUakUs6L+WyMhvWk2EDt1aWlMkBf5PWNuejxOU2XucDqYv9WRtv0WxARQvQX2D2GIkx7ItJg0jZwuRX+OiyZNv9GrPDgmjUUFAIO9dyttuBuWCs9RQ8QdHmY0+dhTaR0Ew6NS9xAjKIAQuwdXBG/PUQ4EFze868wKGYC2UsD/Pi1YKWXY5ERrA07SCmq5oQ4YzV0ZNzV80+YjFlO0gNhhfvRV3DyTaYsrlfHngec7h+ZW+dmUNygKrWEIrd9xVynfzufthzBxR daniel@cloudpanda.io"
+}
